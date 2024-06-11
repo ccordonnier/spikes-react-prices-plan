@@ -29,7 +29,7 @@ const Card: FC<CardType> = ({ content, offer }: PropsWithChildren<CardType>) => 
     animate={{ opacity: 1, scale: 1 }}
     transition={{ delay: transition, duration:0.5 }} >
     <div className={`${type} card rounded-2xl border p-8 text-left text-base bg-card-radial-gradient-primary relative h-[90%]`}>
-      <i className='mt-3'>{type == "primary" ? <DiamondIcon size="50" /> : <TargetIcon size={44} />}</i>
+      <i className='mt-3'>{type == "primary" ? <DiamondIcon size={50} /> : <TargetIcon size={44} />}</i>
       <div className='mt-3 flex items-center'><h2 className='text-3xl'>{name}</h2>{type === "primary" && <Badge>Best Offer</Badge> }</div>
       { offer === "annualy" && <div className='absolute line-through animate__animated animate__slideInUp'>${monthlyPrice}</div>}
       <div className='mt-4 text-base'><span className='price text-4xl text-bold'>${offer === "monthly" ? monthlyPrice : annualyPrice}</span> /month</div>
@@ -43,9 +43,9 @@ const Card: FC<CardType> = ({ content, offer }: PropsWithChildren<CardType>) => 
       </div>
       <div className='absolute bottom-8 w-[80%] overflow-hidden'>
         {type === "primary" ?
-          <PrimaryButton className="w-full brighten" type={type}>Je m'abonne</PrimaryButton>
+          <PrimaryButton className="w-full brighten">Je m'abonne</PrimaryButton>
           :
-          <SecondaryButton className="w-full" type={type}>Je m'abonne</SecondaryButton>
+          <SecondaryButton className="w-full">Je m'abonne</SecondaryButton>
         }
       </div>
     </div>

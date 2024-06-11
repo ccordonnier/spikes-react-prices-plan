@@ -1,4 +1,10 @@
-const DiamondIcon = ({size}) => {
+import { FC } from "react";
+
+type propsType = {
+ size: number,
+}
+
+const DiamondIcon: FC<propsType> = ({size}: propsType) => {
   return (
     <svg width={size} height={size} viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect x="0.0566406" y="0.0566978" width="46.2793" height="46.2793" rx="11.5698" fill="white"/>

@@ -5,10 +5,18 @@ import PrimaryButton from './components/buttons/PrimaryButton';
 import SecondaryButton from './components/buttons/SecondaryButton';
 import BackgroundGradient from './components/BackgroundGradient';
 
-const CardContent = [
+type CardContentItemType = {
+  name: string;
+  type?: "primary"; // Définir "primary" comme un type littéral
+  badge?: string;
+  monthlyPrice: number;
+  transition: number;
+  AdvantageList: string[];
+};
+
+const CardContent: CardContentItemType[] = [
   {
     name: "Essential",
-    icon: "target",
     monthlyPrice: 179,
     transition: 0,
     AdvantageList: [
@@ -22,7 +30,6 @@ const CardContent = [
   {
     name: "Ultime",
     type: "primary",
-    icon: "Diamond",
     badge: "Best offer",
     monthlyPrice: 319,
     transition: 1,
@@ -39,7 +46,6 @@ const CardContent = [
   },
   {
     name: "Premium",
-    icon: "target",
     monthlyPrice: 439,
     transition: 0.5,
     AdvantageList: [
@@ -68,13 +74,13 @@ function App() {
           <div className='my-4 flex gap-4'>
             {offer === "monthly" ?
               <>
-                <PrimaryButton className='py-2 w-[330px] border-white/40' setOffer={setOffer} offer={"monthly"}>Paiement Mensuel</PrimaryButton>
-                <SecondaryButton className='py-2 w-[330px] border-white/40' setOffer={setOffer} offer={"annualy"}>Paiement Annuel (-20%)</SecondaryButton>
+                <PrimaryButton className='py-2 w-[330px] border-white/40' handleClick={()=>setOffer("monthly")} >Paiement Mensuel</PrimaryButton>
+                <SecondaryButton className='py-2 w-[330px] border-white/40' handleClick={()=>setOffer("annualy")} >Paiement Annuel (-20%)</SecondaryButton>
               </>
               :
               <>
-                <SecondaryButton className='py-2 w-[330px] border-white/40' setOffer={setOffer} offer={"monthly"}>Paiement Mensuel</SecondaryButton>
-                <PrimaryButton className='py-2 w-[330px] border-white/40' setOffer={setOffer} offer={"annualy"}>Paiement Annuel (-20%)</PrimaryButton>
+                <SecondaryButton className='py-2 w-[330px] border-white/40' handleClick={()=>setOffer("monthly")}>Paiement Mensuel</SecondaryButton>
+                <PrimaryButton className='py-2 w-[330px] border-white/40' handleClick={()=>setOffer("annualy")} >Paiement Annuel (-20%)</PrimaryButton>
               </>
             }
           </div>
