@@ -1,7 +1,7 @@
 import { Dispatch, PropsWithChildren, SetStateAction } from 'react';
 
 type ButtonType = {
-  className?: "string",
+  className?: string,
   setOffer: Dispatch<SetStateAction<"monthly" | "annualy">>,
   offer: "monthly" | "annualy"
 }

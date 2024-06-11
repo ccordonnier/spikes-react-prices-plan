@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react';
 
 type ButtonType = {
-  className? : "string"
+  className? : string
 }
 
 const SecondaryButton = ({className, setOffer, offer, children}: PropsWithChildren<ButtonType>) => {
