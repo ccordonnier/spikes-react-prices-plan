@@ -1,0 +1,65 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color: rgba(255, 255, 255);
+  background-color: #010B25;
+  font-size: 20px;
+  font-family: "Space Grotesk";
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+.card.primary{
+  font-size: 22px;
+  height: calc(100% + 50px);
+  background-image: url("./assets/primary-card-bg.png");
+  background-size: cover;
+}
+
+.card .separator {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #ffffffa6, transparent);
+  margin-top: 1.1em;
+  margin-bottom: 1.2em;
+}
+
+.offers ul {
+  list-style-type: none;
+}
+
+.offers ul li::before {
+  content: '✓';
+  margin-right: 10px;
+}
+
+.text-gradient {
+  background: #88B3FD;
+  background: linear-gradient(to bottom right, #88B3FD 25%, #043BCB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.brighten{
+  overflow: hidden;
+}
+
+.brighten:after{
+  background: #fff;
+  content: "";
+  height: 155px;
+  left: -75px;
+  opacity: .2;
+  position: absolute;
+  top: -50px;
+  transform: rotate(35deg);
+  transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+  width: 25px;
+  z-index: 10;
+}
+
+.brighten:hover:after {
+    left: 120%;
+    transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
